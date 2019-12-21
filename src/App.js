@@ -28,7 +28,7 @@ class App extends React.Component {
 
         {
           this.state.players.map(player => (
-              <Player name={player.name} key={player.id} id={player.id}
+              <Player name={player.name} key={player.id} id={player.id} score={player.score}
                       removePlayer={this.handleRemovePlayer}></Player>
             )
           )
