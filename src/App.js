@@ -6,10 +6,10 @@ import {Player} from "./components/Player";
 class App extends React.Component {
   state = {
     players: [
-      { name: 'LDK', id: 1},
-      { name: 'PARK', id: 2},
-      { name: 'KIM', id: 3},
-      { name: 'LEE', id: 4}
+      { name: 'LDK', id: 1, score: 10},
+      { name: 'PARK', id: 2, score: 20},
+      { name: 'KIM', id: 3, score: 30},
+      { name: 'LEE', id: 4, score: 40}
     ]
   }
   handleRemovePlayer = (id) => {
