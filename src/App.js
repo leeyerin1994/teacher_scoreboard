@@ -9,26 +9,13 @@ let maxId = 4;
 
 class App extends React.Component {
 
-  handleRemovePlayer = (id) => {
+/*  handleRemovePlayer = (id) => {
     console.log('handleRemovePlayer: ', id);
     this.setState(prevState => {
       const players = prevState.players.filter(player => player.id !== id);
       return {
         players: players
       }
-    })
-  }
-  /*handleChangeScore = (id, delta) => {
-    console.log('handleChangeScore: ', id, delta);
-    this.setState(prevState => {
-      const players = [ ...prevState.players ]
-      players.forEach(player => {
-        if (player.id === id) {
-          player.score += delta;
-        }
-      })
-      // state가 배열일 경우 새로운 배열을 리턴
-      return { players}
     })
   }*/
   render() {
@@ -38,8 +25,7 @@ class App extends React.Component {
 
         {
           this.props.players.map(player => (
-              <Player name={player.name} key={player.id} id={player.id} score={player.score}
-                removePlayer={this.handleRemovePlayer}>
+              <Player name={player.name} key={player.id} id={player.id} score={player.score}>
               </Player>
             )
           )
