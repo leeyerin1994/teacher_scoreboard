@@ -18,7 +18,7 @@ class App extends React.Component {
       }
     })
   }
-  handleChangeScore = (id, delta) => {
+  /*handleChangeScore = (id, delta) => {
     console.log('handleChangeScore: ', id, delta);
     this.setState(prevState => {
       const players = [ ...prevState.players ]
@@ -30,14 +30,6 @@ class App extends React.Component {
       // state가 배열일 경우 새로운 배열을 리턴
       return { players}
     })
-  }
-/*  handleAddPlayer = (name) => {
-    console.log('handleAddPlayer: ', name);
-    this.setState(prevState => {
-      const players = [ ...prevState.players ];
-      players.push({name: name, id: ++maxId, score: 0});
-      return { players }
-    })
   }*/
   render() {
     return (
@@ -47,8 +39,7 @@ class App extends React.Component {
         {
           this.props.players.map(player => (
               <Player name={player.name} key={player.id} id={player.id} score={player.score}
-                removePlayer={this.handleRemovePlayer}
-                changeScore={this.handleChangeScore}>
+                removePlayer={this.handleRemovePlayer}>
               </Player>
             )
           )
