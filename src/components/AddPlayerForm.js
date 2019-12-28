@@ -15,7 +15,6 @@ export class AddPlayerForm extends React.Component {
   }
 
   handleValueChange = (e) => {
-    console.log(e);
     this.setState({ value: e.target.value})
   }
 

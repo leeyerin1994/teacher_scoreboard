@@ -8,7 +8,6 @@ export class Stopwatch extends React.Component {
   }
 
   tick = () => {
-    console.log('tick');
     if (this.state.isRunning) {
       this.setState(prevState => ({
         timer: prevState.timer + 1

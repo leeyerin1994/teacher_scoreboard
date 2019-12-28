@@ -1,3 +1,7 @@
+import {ADD_PLAYER} from "../actonTypes";
+
+let maxId = 4;
+
 const playerInitialState = {
   players: [
     { name: 'LDK', id: 1, score: 10},
@@ -8,6 +12,15 @@ const playerInitialState = {
 }
 
 export const playerReducer = (state = playerInitialState, action) => {
+  switch(action.type) {
+    case ADD_PLAYER:
+      const players = [ ...state.players ];
+      players.push({name: action.name, id: ++maxId, score: 0});
+      return {
+        ...state,
+        players
+      }
+  }
 
   return state;
 }
