@@ -1,4 +1,4 @@
-import {ADD_PLAYER, CHANGE_SCORE} from "../actonTypes";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER} from "../actonTypes";
 
 let maxId = 4;
 
@@ -29,6 +29,13 @@ export const playerReducer = (state = playerInitialState, action) => {
           player.score += action.delta;
         }
       })
+      return {
+        ...state,
+        players
+      }
+
+    case REMOVE_PLAYER:
+      players = state.players.filter(player => player.id !== action.id);
       return {
         ...state,
         players
