@@ -9,6 +9,7 @@ export class AddPlayerForm extends React.Component {
     // form의 기본 이벤트 막기
     e.preventDefault();
     this.props.addPlayer(this.state.value);
+    this.setState({value: ''})
   }
 
   handleValueChange = (e) => {
@@ -19,7 +20,7 @@ export class AddPlayerForm extends React.Component {
   render() {
     return (
       <form className="form" onSubmit={this.submit}>
-        <input type="text" className="input" placeholder="enter a player name"
+        <input type="text" className="input" placeholder="enter a player name" required
                value={this.state.value} onChange={this.handleValueChange}/>
         <input type="submit" className="input" value="Add"></input>
       </form>
