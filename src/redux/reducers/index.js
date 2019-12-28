@@ -4,3 +4,6 @@ import {playerReducer} from "./player";
 export const allReducers = combineReducers({
   playerReducer
 })
+// state = {
+//   playerReducer
+// }
