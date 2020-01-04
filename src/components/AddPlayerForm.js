@@ -1,32 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {addPlayer} from "../redux/actions";
 import {connect} from "react-redux";
 
-export class AddPlayerForm extends React.Component {
-  state = {
-    value: ''
-  }
+const AddPlayerForm = () => {
+  const [value, setValue] = useState('');
 
-  submit = (e) => {
+  const submit = (e) => {
     // form의 기본 이벤트 막기
     e.preventDefault();
     this.props.addPlayer(this.state.value);
     this.setState({value: ''})
   }
 
-  handleValueChange = (e) => {
-    this.setState({ value: e.target.value})
-  }
-
-  render() {
-    return (
-      <form className="form" onSubmit={this.submit}>
-        <input type="text" className="input" placeholder="enter a player name" required
-               value={this.state.value} onChange={this.handleValueChange}/>
-        <input type="submit" className="input" value="Add"></input>
-      </form>
-    );
-  }
+  return (
+    <form className="form" onSubmit={submit}>
+      <input type="text" className="input" placeholder="enter a player name" required
+             value={value} onChange={(e) => setValue(e.target.value)} />
+      <input type="submit" className="input" value="Add"></input>
+    </form>
+  );
 }
 
 // 자식 => 부모 통신: 펑션을 props로 전달
