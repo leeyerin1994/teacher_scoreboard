@@ -12,7 +12,7 @@ const App = () => {
 
   // 최고 점수를 리턴
   const getHighScore  = () => {
-    return  _.maxBy(players, 'score');
+    return  _.maxBy(players, 'score').score;
   }
 
   return (
