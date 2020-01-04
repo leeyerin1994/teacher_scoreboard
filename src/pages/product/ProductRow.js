@@ -1,11 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import './ProductRow.scss'
+import styles from './ProductRow.module.scss';
 
 export const ProductRow = (props) => {
   return (
     <tr>
-      <td className={classNames({'stock': !props.stocked})}>{props.name}</td>
+      {/*es6 computed property*/}
+      <td className={classNames({[styles.stock]: !props.stocked})}>{props.name}</td>
       <td>{props.price}</td>
     </tr>
   );
