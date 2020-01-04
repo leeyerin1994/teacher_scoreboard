@@ -4,6 +4,7 @@ import {Header} from './components/Header';
 import Player from "./components/Player";
 import AddPlayerForm from "./components/AddPlayerForm";
 import {useSelector} from "react-redux";
+import {CustomPlayer} from "./components/CustomPlayer";
 
 const App = () => {
   const players = useSelector(state => state.playerReducer.players);
@@ -14,8 +15,8 @@ const App = () => {
 
       {
         players.map(player => (
-            <Player name={player.name} key={player.id} id={player.id} score={player.score}>
-            </Player>
+            <CustomPlayer name={player.name} key={player.id} id={player.id} score={player.score}>
+            </CustomPlayer>
           )
         )
       }
